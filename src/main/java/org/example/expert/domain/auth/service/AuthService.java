@@ -26,14 +26,15 @@ public class AuthService {
 
     @Transactional
     public SignupResponse signup(SignupRequest signupRequest) {
+        // 이미 사용된 이메일의 경우 이후의 비즈니스 로직을 수행할 필요가 없습니다.
+        // 그래서 이메일의 사용가능 여부를 확인하는 로직을 가장 먼저 수행하는 것이 좋아보입니다.
+        if (userRepository.existsByEmail(signupRequest.getEmail())) {
+            throw new InvalidRequestException("이미 존재하는 이메일입니다.");
+        }
 
         String encodedPassword = passwordEncoder.encode(signupRequest.getPassword());
 
         UserRole userRole = UserRole.of(signupRequest.getUserRole());
-
-        if (userRepository.existsByEmail(signupRequest.getEmail())) {
-            throw new InvalidRequestException("이미 존재하는 이메일입니다.");
-        }
 
         User newUser = new User(
                 signupRequest.getEmail(),
