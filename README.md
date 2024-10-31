@@ -42,7 +42,7 @@
     - [ ] : 이름이 그 행위를 충분히 설명하고 있는지?
       네이밍은 의미를 명확히 전달하도록 작성 (예: `getUserById`는 `findUserById`로 변경 가능)
     - [ ] : 접두사 또는 접미사를 통한 일관성 유지 (예: DTO는 `UserDTO`, Service는 `UserService` 등)
-    <br/>
+<br/>
 
 ### 4. 중복 코드 제거
 단순하게 중복 코드를 제거한다고 `private` 메서드로 추출하는 것을 말하는 것이 아님에 유의하자. 중복된 코드를 수행하기 `적합한 역할을 가진 클래스에 위임하는 방식` 을 사용해 볼 것!
@@ -56,3 +56,21 @@
         - [x]  중복 코드의 기능을 분석하고, 재사용 가능한 메서드를 생성
         - [x]  메서드 이름은 기능을 명확히 전달할 수 있도록 작성
         - [x]  메서드는 단일 책임 원칙(SRP)을 준수해야 하며, 한 가지 기능만 수행하도록 구현
+<br/><br/>
+
+## Level.04 - 테스트 코드 & AOP
+### 1. 테스트 연습(1)
+- [x] : 테스트 패키지 `package org.example.expert.config` 의 `PassEncoderTest 클래스` 에 있는 `matches_메서드가_정상적으로_동작한다()` 테스트가 의도대로 성공할 수 있게 수정한다.
+<br/>
+
+### 2. 테스트 연습(2)
+- [x] : 테스트 패키지 `package org.example.expert.domain.manager.service` 의 `ManagerServiceTest 의 클래스` 에 있는 `manager_목록_조회_시_Todo가_없다면_NPE_에러를_던진다()` 테스트가 성공하고 컨텍스트와 일치하도록 테스트 코드와 테스트 코드 메서드 명을 수정한다.
+- [x] : 테스트 패키지 `org.example.expert.domain.comment.service` 의 `CommentServiceTest 의 클래스` 에 있는 `comment_등록_중_할일을_찾지_못해_에러가_발생한다()` 테스트가 성공할 수 있도록 테스트 코드를 수정한다.
+- [x] : 테스트 패키지 `org.example.expert.domain.manager.service` 의 `ManagerServiceTest 클래스` 에 있는 `todo의_user가_null인_경우_예외가_발생한다()` 테스트가 성공할 수 있도록 서비스 로직을 수정한다.
+<br/>
+
+### 3. AOP
+- [x] : `Admin` 사용자만 접근할 수 있는 특정 API 에는 접근할 때마다 `접근 로그` 를 기록해야 한다.
+  - [x] : 패키지 `org.example.expert.domain.comment.controller` 의 `CommentAdminController` 클래스에 있는 `deleteComment()`
+  - [x] : 패키지 `package org.example.expert.domain.user.controller` 의 `UserAdminController` 클래스에 있는 `changeUserRole()`
+  - [x] : `Spring AOP` 를 활용해 접근 로그를 기록하는 기능을 구현한다.
