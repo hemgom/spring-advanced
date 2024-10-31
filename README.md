@@ -69,8 +69,8 @@
 - [x] : 테스트 패키지 `org.example.expert.domain.manager.service` 의 `ManagerServiceTest 클래스` 에 있는 `todo의_user가_null인_경우_예외가_발생한다()` 테스트가 성공할 수 있도록 서비스 로직을 수정한다.
 <br/>
 
-### 3. APO
-- [ ] : `Admin` 사용자만 접근할 수 있는 특정 API 에는 접근할 때마다 `접근 로그` 를 기록해야 한다.
-  - [ ] : 패키지 `org.example.expert.domain.comment.controller` 의 `CommentAdminController` 클래스에 있는 `deleteComment()`
-  - [ ] : 패키지 `package org.example.expert.domain.user.controller` 의 `UserAdminController` 클래스에 있는 `changeUserRole()`
-  - [ ] : `Spring AOP` 를 활용해 접근 로그를 기록하는 기능을 구현한다.
+### 3. AOP
+- [x] : `Admin` 사용자만 접근할 수 있는 특정 API 에는 접근할 때마다 `접근 로그` 를 기록해야 한다.
+  - [x] : 패키지 `org.example.expert.domain.comment.controller` 의 `CommentAdminController` 클래스에 있는 `deleteComment()`
+  - [x] : 패키지 `package org.example.expert.domain.user.controller` 의 `UserAdminController` 클래스에 있는 `changeUserRole()`
+  - [x] : `Spring AOP` 를 활용해 접근 로그를 기록하는 기능을 구현한다.
